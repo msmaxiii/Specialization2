@@ -15,7 +15,6 @@ import java.util.Set;
 //used to convert obj to a byte so that it can be changed back into a copy of the object
 public class CustomerDto implements Serializable {
 
-
     private Long id;
     private String customer_name;
     private String password;
