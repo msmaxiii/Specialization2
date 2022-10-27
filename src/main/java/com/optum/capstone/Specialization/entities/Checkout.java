@@ -22,43 +22,15 @@ public class Checkout {
     private Long id;
 
 @Column(unique = true)
-private String buy;
+private String checkout;
+
 @Column
-private String favorite;
+private String book;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getBuy() {
-        return buy;
-    }
-
-    public void setBuy(String buy) {
-        this.buy = buy;
-    }
-
-    public String getFavorite() {
-        return favorite;
-    }
-
-    public void setFavorite(String favorite) {
-        this.favorite = favorite;
-    }
-
-    public Checkout() {
-    }
-
-    public Checkout(Long id, String buy, String favorite) {
-        this.id = id;
-        this.buy = buy;
-        this.favorite = favorite;
-    }
     @OneToMany(mappedBy ="customer", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     @JsonBackReference
     private Set<Book> bookSet = new HashSet<>();
+
+
 }

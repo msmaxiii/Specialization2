@@ -21,7 +21,7 @@ public CheckoutDto (Checkout checkout){
         this.id = checkout.getId();
     }
     if(checkout.getBook() !=null){
-        this.book = book.getBook();
+        this.book = checkout.getBook();
     }
 }
 

@@ -22,7 +22,7 @@ public class FavoriteDto implements Serializable {
             this.id = favorite.getId();
         }
         if(favorite.getFavorite() !=null){
-            this.favorite =favorite.getFavorite();
+            this.favorite = favorite.getFavorite();
         }
     }
 }
