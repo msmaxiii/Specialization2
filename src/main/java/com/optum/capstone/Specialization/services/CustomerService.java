@@ -9,6 +9,5 @@ public interface CustomerService {
     @Transactional
     List<String> addCustomer(CustomerDto customerDto);
 
-    List<String>customerLogin(CustomerDto customerDto);
-
+    List<String> customerLogin(CustomerDto customerDto);
 }

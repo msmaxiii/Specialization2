@@ -16,17 +16,16 @@ import java.util.Set;
 public class CustomerDto implements Serializable {
 
     private Long id;
-    private String customer_name;
+    private String customerName;
     private String password;
     private String email;
-    private Set<BookDto> BookDtoSet = new HashSet<>();
 
     public CustomerDto (Customer customer){
         if (customer.getId() != null){
             this.id = customer.getId();
         }
-        if( customer.getCustomer_name() != null){
-            this.customer_name = customer.getCustomer_name();
+        if( customer.getCustomerName() != null){
+            this.customerName = customer.getCustomerName();
         }
         if( customer.getPassword() !=null){
             this.password = customer.getPassword();
@@ -35,11 +34,6 @@ public class CustomerDto implements Serializable {
             this.email= customer.getEmail();
         }
     }
-
-
-
-
-
 
 }
 

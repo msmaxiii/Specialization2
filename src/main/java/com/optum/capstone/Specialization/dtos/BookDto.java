@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -15,6 +17,7 @@ public class BookDto implements Serializable {
 
     private Long id;
     private String genre;
+    private Set<BookDto> BookDtoSet = new HashSet<>();
 
     public BookDto (Book book){
         if(book.getId() !=null){

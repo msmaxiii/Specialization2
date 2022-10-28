@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -15,6 +17,7 @@ public class CheckoutDto implements Serializable {
 
     private Long id;
     private String book;
+    private Set<CheckoutDto> CheckoutDtoSet = new HashSet<>();
 
 public CheckoutDto (Checkout checkout){
     if(checkout.getId() !=null){

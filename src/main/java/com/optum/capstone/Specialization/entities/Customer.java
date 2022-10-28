@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 // 1.tells spring that this class is being mapped and table what objects are being mapped
 //  2. created variables
@@ -23,8 +23,8 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
-    private String customer_name;
+    @Column(unique = true, name ="customer_name")
+    private String customerName;
 
     @Column
     private String password;
@@ -36,7 +36,18 @@ public class Customer {
  //other half of relationship
  //creates schema for data model
  //cascade defines relationship and lazy gives only reqeseted information
-    @OneToMany(mappedBy ="customer", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+ @OneToMany(mappedBy = "customer")
     @JsonBackReference
-    private Set<Book> bookSet = new HashSet<>();
+    private List<CustomerFavBook> customerFavBookList;
+
+    public List<CustomerFavBook> getCustomerFavBookList() {
+        if(customerFavBookList == null){
+            customerFavBookList = new ArrayList();
+        }
+        return customerFavBookList;
+
+    }
+
+    public Customer(CustomerDto customerDto) {
+    }
 }

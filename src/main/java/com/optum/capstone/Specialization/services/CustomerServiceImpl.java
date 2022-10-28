@@ -23,30 +23,32 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+
     @Override
     @Transactional
-    public List<String> addCustomer (CustomerDto customerDto){
+    public List<String> addCustomer(CustomerDto customerDto) {
         List<String> response = new ArrayList<>();
         Customer customer = new Customer(customerDto);
         customerRepository.saveAndFlush(customer);
-        response.add("Customer Added ");
+        response.add("http://localhost:8080/home.html");
         return response;
-
-    @Override
-    public List<String>customerLogin(CustomerDto customerDto){
-        List<String> response = new ArrayList<>();
-        Optional<Customer> customerOptional = customerRepository.findByCustomer_name(customerDto.getCustomer_name());}
-        if(customerOptional.isPresent()){
-           if(passwordEncoder.matches(customerDto.getPassword(),customerOptional.get().getPassword())) {
-               response.add("Customer logged in");
-               response.add(String.valueOf(customerOptional.get().getId()));
-           } else{
-               response.add("Customer_name or password incorrect");
-           }
-        } else{
+    }
+         @Override
+         public List<String> customerLogin(CustomerDto customerDto) {
+            List<String> response = new ArrayList<>();
+        Optional<Customer> customerOptional = customerRepository.findByCustomer_name(customerDto.getCustomerName());
+        if (customerOptional.isPresent()) {
+            if (passwordEncoder.matches(customerDto.getPassword(), customerOptional.get().getPassword())) {
+                response.add("http://localhost:8080/home.html");
+                response.add(String.valueOf(customerOptional.get().getId()));
+            } else {
+                response.add("Customer_name or password incorrect");
+            }
+        } else {
             response.add("Customer_name or password incorrect");
         }
         return response;
 
+        }
     }
-}
+
