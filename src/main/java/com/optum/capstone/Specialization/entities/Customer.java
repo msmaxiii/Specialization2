@@ -23,7 +23,7 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, name ="customer_name")
+    @Column(unique = true, name ="customerName")
     private String customerName;
 
     @Column
@@ -33,20 +33,31 @@ public class Customer {
     private String email;
 
 
- //other half of relationship
+
+    //other half of relationship
  //creates schema for data model
  //cascade defines relationship and lazy gives only reqeseted information
- @OneToMany(mappedBy = "customer")
-    @JsonBackReference
-    private List<CustomerFavBook> customerFavBookList;
+@ManyToMany
+@JoinTable(name = "customer_book",
+        joinColumns = { @JoinColumn(name = "customer_id") },
+        inverseJoinColumns = { @JoinColumn(name = "book_id") }
+)
+private List<Book> books;
 
-    public List<CustomerFavBook> getCustomerFavBookList() {
-        if(customerFavBookList == null){
-            customerFavBookList = new ArrayList();
+    public List<Book> getBooks() {
+        if(books ==null){
+            books = new ArrayList<>();
         }
-        return customerFavBookList;
-
+        return books;
     }
+
+    public void addBook(Book book){
+        this.getBooks().add(book);
+        book.getCustomers().add(this);
+    }
+
+
+
 
     public Customer(CustomerDto customerDto) {
     }

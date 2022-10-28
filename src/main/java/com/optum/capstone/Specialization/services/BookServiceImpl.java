@@ -3,7 +3,6 @@ package com.optum.capstone.Specialization.services;
 
 import com.optum.capstone.Specialization.dtos.BookDto;
 import com.optum.capstone.Specialization.entities.Customer;
-import com.optum.capstone.Specialization.entities.CustomerFavBook;
 import com.optum.capstone.Specialization.repositories.BookRepository;
 import com.optum.capstone.Specialization.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +22,10 @@ public class BookServiceImpl implements BookService {
     private BookRepository bookRepository;
 
     @Override
-    public List<BookDto> getAllBooksByUserId(Long customerId){
-        Optional<Customer> customerOptional = customerRepository.findById(customerId);
+    public List<BookDto> getAllBooksByCustomerId(Long customerId){
+        Optional<Customer> customerOptional = customerRepository.(customerId);
         if (customerOptional.isPresent()){
-            List<CustomerFavBook> BookList = bookRepository.findAllByCustomersEquals(customerOptional.get());
+            List<CustomerFavBook> BookList = bookRepository.(customerOptional.get());
             return CustomerBookList.stream().map(book -> new BookDto(customerBook)).collect(Collectors.toList());
         }
         return Collections.emptyList();
