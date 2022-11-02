@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface FavoriteService {
 
     @Transactional
-    void addFavoriteCustomer(FavoriteDto favoriteDto, Long customerId);
+    void addFavorite(FavoriteDto favoriteDto, Long customerId);
 
     @Transactional
     void deleteFavoriteById(Long favoriteId);
