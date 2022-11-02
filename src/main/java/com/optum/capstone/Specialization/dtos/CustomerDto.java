@@ -14,13 +14,13 @@ import java.util.Set;
 @NoArgsConstructor
 //used to convert obj to a byte so that it can be changed back into a copy of the object
 public class CustomerDto implements Serializable {
-
     private Long id;
     private String customerName;
     private String password;
     private String email;
+    private Set<CustomerDto> customerDtoSet = new HashSet<>();
 
-    public CustomerDto (Customer customer){
+    public CustomerDto(Customer customer){
         if (customer.getId() != null){
             this.id = customer.getId();
         }

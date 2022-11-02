@@ -6,6 +6,7 @@
 package com.optum.capstone.Specialization.controller;
 
 import com.optum.capstone.Specialization.dtos.CustomerDto;
+import com.optum.capstone.Specialization.entities.Customer;
 import com.optum.capstone.Specialization.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -31,4 +32,9 @@ public class CustomerController {
         customerDto.setPassword(passHash);
         return customerService.addCustomer(customerDto);
     }
+    @PostMapping("/login")
+    public List<String>customerLogin(@RequestBody CustomerDto customerDto){
+        return customerService.customerLogin(customerDto);
+    }
+
 }

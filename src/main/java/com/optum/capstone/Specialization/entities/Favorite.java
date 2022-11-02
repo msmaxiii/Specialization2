@@ -1,46 +1,38 @@
 package com.optum.capstone.Specialization.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.optum.capstone.Specialization.dtos.FavoriteDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Entity
-@Table(name ="Books")
+@Table(name="Favorites")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Book {
+public class Favorite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="Book_Name")
-    private String bookName;
+    @Column(columnDefinition = "text")
+    private String favorite;
 
     @ManyToOne
-    @JoinColumn(name="genre_Id")
-    private Genre genre;
+    @JsonBackReference
+    private Customer customer;
 
-    @ManyToMany(mappedBy = "books")
-    private List<Customer> customers;
-
-
-    public List<Customer> getCustomers() {
-        if(customers == null){
-            customers = new ArrayList<>();
+    public Favorite(FavoriteDto favoriteDto){
+        if(favoriteDto.getFavorite() !=null){
+            this.favorite = favoriteDto.getFavorite();
         }
-        return customers;
     }
 
- public void addCustomer( Customer customer){
-        this.getCustomers().add(customer);
-        customer.getBooks().add(this);
  }
 
 
@@ -52,4 +44,4 @@ public class Book {
 
 
 
-}
+
