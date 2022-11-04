@@ -15,6 +15,7 @@ import java.util.Set;
 public class FavoriteDto implements Serializable {
     private Long id;
     private String favorite;
+
     private CustomerDto customerDto;
 
 
