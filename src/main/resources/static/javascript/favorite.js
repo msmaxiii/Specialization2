@@ -6,7 +6,7 @@ const customerId = cookieArr[1];
 
 //DOM Elements
 const submitForm = document.getElementById("favorite-form")
-const noteContainer = document.getElementById("favorite-container")
+const favoriteContainer = document.getElementById("favorite-container")
 
 //Modal Elements
 let favoriteBody = document.getElementById("favorite-body")
@@ -16,7 +16,7 @@ const headers = {
     'Content-Type': 'application/json'
 }
 
-const baseUrl = "http://localhost:8080/api/v1/favorite/"
+const baseUrl = "http://localhost:8080/api/v1/favorites/"
 
 const handleSubmit = async (e) => {
     e.preventDefault()

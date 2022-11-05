@@ -6,7 +6,7 @@ const headers = {
     'Content-Type':'application/json'
 }
 
-const baseUrl = 'http://localhost:8080/api/v1/customer'
+const baseUrl = 'http://localhost:8080/api/v1/customers'
 
 const handleSubmit = async (e) =>{
     e.preventDefault()
