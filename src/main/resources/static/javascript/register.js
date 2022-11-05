@@ -1,5 +1,5 @@
 const registerForm = document.getElementById('register-form')
-const registerCustomername = document.getElementById('register-customername')
+const registerCustomername = document.getElementById('register-customerName')
 const registerPassword = document.getElementById('register-password')
 const registerEmail = document.getElementById('register-email')
 
@@ -7,7 +7,7 @@ const headers = {
     'Content-Type':'application/json'
 }
 
-const baseUrl = 'http://localhost:8080/api/v1/customers'
+const baseUrl = 'http://localhost:8080/api/v1/customer'
 
 
 const handleSubmit = async (e) =>{

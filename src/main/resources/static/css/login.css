@@ -1,0 +1,40 @@
+@import"https;//fonts.googleapis.com/css?family=Montserrat:100";
+*{
+    margin: 0;
+    padding:0;
+     box-sizing: border-box;
+}
+
+ .main{
+    margin-top:105px;
+    margin-bottom:0px ;
+    display:flex;
+    justify-content:center;
+    transition: all .2s linear;
+
+}
+ h1{
+    font-size: 100px;
+    font-family:"Montserrat",Arial,sans-serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+.btn1{
+    display: flex;
+    justify-content:center;
+    margin-top: 20px;
+
+}
+.btn2{
+    display: flex;
+    justify-content:center;
+    margin-top: 10px;
+
+}
+h2{
+    color:black
+}
+

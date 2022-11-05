@@ -1,18 +1,18 @@
 const loginForm = document.getElementById('login-form')
-const loginCustomername = document.getElementById('login-customername')
+const loginCustomerName = document.getElementById('login-customerName')
 const loginPassword = document.getElementById('login-password')
 
 const headers = {
     'Content-Type':'application/json'
 }
 
-const baseUrl = 'http://localhost:8080/api/v1/customers'
+const baseUrl = 'http://localhost:8080/api/v1/customer'
 
 const handleSubmit = async (e) =>{
     e.preventDefault()
 
     let bodyObj = {
-        customername: loginCustomername.value,
+        customerName: loginCustomerName.value,
         password: loginPassword.value
     }
 
