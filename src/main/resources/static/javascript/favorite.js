@@ -1,5 +1,4 @@
 
-
 //Cookie
 const cookieArr = document.cookie.split("=")
 const userId = cookieArr[1];
@@ -16,7 +15,7 @@ const headers = {
     'Content-Type': 'application/json'
 }
 
-const baseUrl = "http://localhost:8080/api/v1/favorites/"
+const baseUrl = 'http://localhost:8080/api/v1/favorite/'
 
 const handleSubmit = async (e) => {
     e.preventDefault()
@@ -37,7 +36,7 @@ async function addFavorite(obj) {
     if (response.status == 200) {
         return getFavorites(userId);
     }
-    }
+   }
     async function getFavorites(userId) {
         await fetch(`${baseUrl}user/${userId}`, {
             method: "GET",
@@ -74,7 +73,6 @@ async function handleFavoriteEdit(favoriteId){
         id: favoriteId,
         body: favoriteBody.value
     }
-
     await fetch(baseUrl, {
         method: "PUT",
         body: JSON.stringify(bodyObj),
