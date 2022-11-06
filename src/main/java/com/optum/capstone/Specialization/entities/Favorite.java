@@ -1,5 +1,6 @@
 package com.optum.capstone.Specialization.entities;
 
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.optum.capstone.Specialization.dtos.FavoriteDto;
 import lombok.AllArgsConstructor;
@@ -22,10 +23,11 @@ public class Favorite {
 
     @Column(columnDefinition = "text")
     private String favorite;
-
-    @ManyToOne
-    @JsonBackReference
-    private Customer customer;
+    //many to one creates association within Hibernate
+// Jsonback ref prevents infinite recursion when you deliver the resource up as Json using Restful APi endpoints
+  @ManyToOne
+   @JsonBackReference
+    private User user;
 
     public Favorite(FavoriteDto favoriteDto){
         if(favoriteDto.getFavorite() !=null){

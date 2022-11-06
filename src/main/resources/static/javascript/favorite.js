@@ -2,7 +2,7 @@
 
 //Cookie
 const cookieArr = document.cookie.split("=")
-const customerId = cookieArr[1];
+const userId = cookieArr[1];
 
 //DOM Elements
 const submitForm = document.getElementById("favorite-form")
@@ -28,18 +28,18 @@ const handleSubmit = async (e) => {
 }
 
 async function addFavorite(obj) {
-    const response = await fetch(`${baseUrl}customer/${customerId}`, {
+    const response = await fetch(`${baseUrl}user/${userId}`, {
         method: "POST",
         body: JSON.stringify(obj),
         headers: headers
     })
         .catch(err => console.error(err.message))
     if (response.status == 200) {
-        return getFavorites(customerId);
+        return getFavorites(userId);
     }
     }
-    async function getFavorites(customerId) {
-        await fetch(`${baseUrl}customer/${customerId}`, {
+    async function getFavorites(userId) {
+        await fetch(`${baseUrl}user/${userId}`, {
             method: "GET",
             headers: headers
         })
@@ -55,7 +55,7 @@ async function addFavorite(obj) {
         })
             .catch(err => console.error(err))
 
-        return getFavorites(customerId);
+        return getFavorites(userId);
     }
 
 
@@ -82,7 +82,7 @@ async function handleFavoriteEdit(favoriteId){
     })
         .catch(err => console.error(err))
 
-    return getFavorites(customerId);
+    return getFavorites(userId);
 }
 
 const createFavoriteCards = (array) => {
@@ -121,7 +121,7 @@ const populateModal = (obj) =>{
     updateFavoriteBtn.setAttribute('data-favorite-id', obj.id)
 }
 
-getFavorites(customerId);
+getFavorites(userId);
 
 submitForm.addEventListener("submit", handleSubmit)
 

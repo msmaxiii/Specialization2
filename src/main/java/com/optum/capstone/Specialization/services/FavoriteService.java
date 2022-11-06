@@ -9,14 +9,14 @@ import java.util.Optional;
 public interface FavoriteService {
 
     @Transactional
-    void addFavorite(FavoriteDto favoriteDto, Long customerId);
+    void addFavorite(FavoriteDto favoriteDto, Long userId);
 
     @Transactional
     void deleteFavoriteById(Long favoriteId);
 
     @Transactional
     void updateFavoriteById(FavoriteDto favoriteDto);
-    List<FavoriteDto> getAllFavoritesByCustomerId(Long customerId);
+    List<FavoriteDto> getAllFavoritesByUserId(Long userId);
 
     Optional<FavoriteDto> getFavoriteById(Long favoriteId);
 }

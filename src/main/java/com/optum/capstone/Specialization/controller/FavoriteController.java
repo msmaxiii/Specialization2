@@ -14,18 +14,18 @@ public class FavoriteController {
     @Autowired
     private FavoriteService favoriteService;
 
-    @GetMapping("/customer/{customerId}")
-    public List<FavoriteDto> getAllFavoritesByCustomerId(@PathVariable Long customerId){
-        return favoriteService.getAllFavoritesByCustomerId(customerId);
+    @GetMapping("/user/{userId}")
+    public List<FavoriteDto> getAllFavoritesByUserId(@PathVariable Long userId){
+        return favoriteService.getAllFavoritesByUserId(userId);
 }
     @GetMapping("/{favoriteId}")
     public Optional<FavoriteDto> getFavoriteById(@PathVariable Long favoriteId){
         return favoriteService.getFavoriteById(favoriteId);
     }
 
-    @PostMapping("/customer/{customerId}")
-    public void addFavorite(@RequestBody FavoriteDto favoriteDto,@PathVariable Long customerId){
-        favoriteService.addFavorite(favoriteDto, customerId);
+    @PostMapping("/user/{userId}")
+    public void addFavorite(@RequestBody FavoriteDto favoriteDto,@PathVariable Long userId){
+        favoriteService.addFavorite(favoriteDto, userId);
     }
 
     @DeleteMapping("/{favoriteId}")

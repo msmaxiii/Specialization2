@@ -1,10 +1,10 @@
 package com.optum.capstone.Specialization.services;
 
 import com.optum.capstone.Specialization.dtos.FavoriteDto;
-import com.optum.capstone.Specialization.entities.Customer;
+import com.optum.capstone.Specialization.entities.User;
 import com.optum.capstone.Specialization.entities.Favorite;
 import com.optum.capstone.Specialization.repositories.FavoriteRepository;
-import com.optum.capstone.Specialization.repositories.CustomerRepository;
+import com.optum.capstone.Specialization.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,18 +16,18 @@ import java.util.stream.Collectors;
 @Service
 public class FavoriteServiceImpl implements FavoriteService{
 
-    @Autowired
-    private CustomerRepository customerRepository;
+  @Autowired
+    private UserRepository userRepository;
 
-    @Autowired
+@Autowired
     private FavoriteRepository favoriteRepository;
 
-    @Override
-    public void addFavorite(FavoriteDto favoriteDto, Long customerId){
+   @Override
+    public void addFavorite(FavoriteDto favoriteDto, Long userId){
 
-        Optional<Customer> customerOptional = customerRepository.findById(customerId);
+        Optional<User> userOptional = userRepository.findById(userId);
         Favorite favorite = new Favorite(favoriteDto);
-        customerOptional.ifPresent(favorite::setCustomer); // it's same as note.set user(user optional)
+        userOptional.ifPresent(favorite::setUser); // it's same as note.set user(user optional)
         favoriteRepository.saveAndFlush(favorite);
     }
 
@@ -37,7 +37,7 @@ public class FavoriteServiceImpl implements FavoriteService{
         favoriteOptional.ifPresent(favorite -> favoriteRepository.delete(favorite));
     }
 
-    @Override
+   @Override
     public void updateFavoriteById(FavoriteDto favoriteDto) {
         Optional<Favorite> favoriteOptional = favoriteRepository.findById(favoriteDto.getId() );
         favoriteOptional.ifPresent(favorite -> {
@@ -47,11 +47,11 @@ public class FavoriteServiceImpl implements FavoriteService{
         });
     }
 
-    @Override
-    public List<FavoriteDto> getAllFavoritesByCustomerId(Long customerId) {
-        Optional<Customer> customerOptional = customerRepository.findById(customerId);
-        if(customerOptional.isPresent()){
-            List<Favorite> favoriteList = favoriteRepository.findAllByCustomerEquals(customerOptional.get());
+   @Override
+    public List<FavoriteDto> getAllFavoritesByUserId(Long userId) {
+        Optional<User> userOptional = userRepository.findById(userId);
+        if(userOptional.isPresent()){
+            List<Favorite> favoriteList = favoriteRepository.findAllByUserEquals(userOptional.get());
 
             return favoriteList.stream().map(favorite -> new FavoriteDto(favorite)).collect(Collectors.toList());
 

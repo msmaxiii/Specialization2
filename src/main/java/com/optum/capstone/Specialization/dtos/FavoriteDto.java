@@ -6,8 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -16,7 +14,7 @@ public class FavoriteDto implements Serializable {
     private Long id;
     private String favorite;
 
-    private CustomerDto customerDto;
+    private UserDto userDto;
 
 
     public FavoriteDto(Favorite favorite){
