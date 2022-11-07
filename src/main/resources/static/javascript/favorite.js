@@ -6,6 +6,7 @@ const userId = cookieArr[1];
 //DOM Elements
 const submitForm = document.getElementById("favorite-form")
 const favoriteContainer = document.getElementById("favorite-container")
+//const form = document.querySelector('#email');
 
 //Modal Elements
 let favoriteBody = document.getElementById("favorite-body")
@@ -20,8 +21,10 @@ const baseUrl = 'http://localhost:8080/api/v1/favorite/'
 const handleSubmit = async (e) => {
     e.preventDefault()
     let bodyObj = {
-        body: document.getElementById("favorite-input").value
+     favorite: document.getElementById("favorite-input").value
     }
+    console.log(bodyObj);
+
     await addFavorite(bodyObj);
     document.getElementById("favorite-input").value = ''
 }
@@ -71,8 +74,10 @@ async function getFavoriteById(favoriteId){
 async function handleFavoriteEdit(favoriteId){
     let bodyObj = {
         id: favoriteId,
-        body: favoriteBody.value
+       body: favoriteBody.value
     }
+
+
     await fetch(baseUrl, {
         method: "PUT",
         body: JSON.stringify(bodyObj),
@@ -91,7 +96,7 @@ const createFavoriteCards = (array) => {
        favoriteCard.innerHTML =`
             <div class="card d-flex" style="width: 18rem; height: 18rem;">
                 <div class="card-body d-flex flex-column  justify-content-between" style="height: available">
-                    <p class="card-text">${obj.body}</p>
+                    <p class="card-text">${obj.favorite}</p>
                     <div class="d-flex justify-content-between">
                         <button class="btn btn-danger" onclick="handleDelete(${obj.id})">Delete</button>
                         <button onclick="getFavoriteById(${obj.id})" type="button" class="btn btn-primary"
@@ -127,5 +132,29 @@ updateFavoriteBtn.addEventListener("click", (e)=>{
     let favoriteId = e.target.getAttribute('data-favorite-id')
     handleFavoriteEdit(favoriteId);
 })
+
+/*
+ <form id ="email">
+    <label for="emailAddress">Email</label>
+    <input type="text" id="email" name="emailAddress" placeholder="Add your email address">
+    <input type="submit" value="Send">
+  </form>
+
+
+*/
+
+/*
+function handleSend(evt) {
+	evt.preventDefault();
+
+	alert('Email sent');
+}
+form.addEventListener('submit', handleSend);
+
+
+
+*/
+
+
 
 

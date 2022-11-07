@@ -1,11 +1,11 @@
 insert into Users (users, password, email) values
 ('admin', 'admin987', 'administrator@gmail'),
-('Garth', 'Ivey123', 'garth@gmail')
-('Bella', 'Boop456', 'bella@gmail'),
-('James', 'Allen123', 'James@gmail'),
-('Gee', 'Max455', 'Gee@gmail'),
-('Courtney', 'Pace123', 'pace@gmail'),
-('Lee', 'Lind456', 'Lee@gmail')
+('Garth', 'Ivey', 'garth@gmail')
+('Bella', 'Boop', 'bella@gmail'),
+('James', 'Allen', 'James@gmail'),
+('Gee', 'Max', 'Gee@gmail'),
+('Courtney', 'Pace', 'pace@gmail'),
+('Lee', 'Lind', 'Lee@gmail')
 ;
 
 insert into Favorite (favorite,books) values

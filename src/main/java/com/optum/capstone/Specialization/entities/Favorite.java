@@ -23,6 +23,9 @@ public class Favorite {
 
     @Column(columnDefinition = "text")
     private String favorite;
+
+    @Column
+    private String body;
     //many to one creates association within Hibernate
 // Jsonback ref prevents infinite recursion when you deliver the resource up as Json using Restful APi endpoints
   @ManyToOne

@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class FavoriteDto implements Serializable {
     private Long id;
     private String favorite;
-
+    private String body;
     private UserDto userDto;
 
 
@@ -24,6 +24,9 @@ public class FavoriteDto implements Serializable {
         if(favorite.getFavorite() !=null){
             this.favorite = favorite.getFavorite();
         }
-
+        if(favorite.getBody() !=null){
+            this.body = favorite.getBody();
     }
 }
+}
+

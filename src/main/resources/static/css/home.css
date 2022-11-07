@@ -99,6 +99,9 @@ header .navbar a{
    font-size: 2rem;
    background: #eee;
 }
+
+// cards
+
  .home{
     margin-top:45px;
     margin-bottom:50px ;
@@ -117,15 +120,16 @@ header .navbar a{
     font-size: 12px;
 
  }
-.box-container{
-   box-sizing:border-box ;
-   display: flex;
-   justify-content: center;
-   gap: 150px 100px;
+.container{
+Display:flex;
+Justify-content: center;
+Flex-wrap:  wrap;
+gap: 150px 100px;
 }
-.romance1{
+.romance{
    display: flex;
     align-items:row;
+
 }
 h2{
     font-size: 14px;

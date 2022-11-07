@@ -20,7 +20,7 @@ const handleSubmit = async (e) =>{
         email: registerEmail.value
     }
 
-    const response = await fetch(${baseUrl}/register, {
+    const response = await fetch(`${baseUrl}/register`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
         headers: headers

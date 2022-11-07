@@ -41,7 +41,7 @@ public class FavoriteServiceImpl implements FavoriteService{
     public void updateFavoriteById(FavoriteDto favoriteDto) {
         Optional<Favorite> favoriteOptional = favoriteRepository.findById(favoriteDto.getId() );
         favoriteOptional.ifPresent(favorite -> {
-//            favorite.setBody(favoriteDto.getBody());
+            favorite.setBody(favoriteDto.getBody());
             favoriteRepository.saveAndFlush(favorite);
             //use the note detail to make some other logic changes
         });

@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1/favorite")
-public class FavoriteController {
+public class  FavoriteController {
     @Autowired
     private FavoriteService favoriteService;
 
