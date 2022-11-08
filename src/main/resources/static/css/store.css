@@ -17,29 +17,26 @@
         margin-top: 130px;
     }
     h1{
-        display: flex;
+      display: flex;
       justify-content: center;
-      font-size: 64px;
+      font-size: 18px;
     }
-    .btn1{
-        display:flex;
-        justify-content: center;
-        margin-top: 10px;
+    h2{
+      display: flex;
+          justify-content: center;
+          font-size: 18px;
     }
-    .btn2{
-        display:flex;
-        justify-content: center;
-        margin-top: 30px;
-    }
-    .div.home.hover:{
-        border:1px solid #777;
-    }
-    .hover {
-        display: block;
-      }
 
-      y.hover{
-        display:block
-      }
+    a{
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background: linear-gradient(white, red)
+
+    }
 
 

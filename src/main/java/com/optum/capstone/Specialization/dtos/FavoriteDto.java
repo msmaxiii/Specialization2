@@ -27,6 +27,9 @@ public class FavoriteDto implements Serializable {
         if(favorite.getBody() !=null){
             this.body = favorite.getBody();
     }
-}
-}
+
+        }
+ }
+
+
 

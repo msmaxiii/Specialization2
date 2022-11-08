@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 :root{
-   --green:#27ae60;
+
    --black:#192a56;
    --light-color:#777;
    --red:rgb(160, 22, 22);
@@ -100,54 +100,41 @@ header .navbar a{
    background: #eee;
 }
 
-// cards
+//main pic
 
- .home{
-    margin-top:45px;
-    margin-bottom:50px ;
-    display:flex;
-    justify-content:center;
-    transition: all .2s linear;
+.home{
+align-items:center;
+
+}
+.image{
+margin-top:20px;
+margin-bottom:20px;
 }
 
 
- div .a{
- color:red;
- image-size: 14px;
-
- }
- btn{
-    font-size: 12px;
-
- }
-.container{
-Display:flex;
-Justify-content: center;
-Flex-wrap:  wrap;
-gap: 150px 100px;
-}
-.romance{
-   display: flex;
-    align-items:row;
-
-}
-h2{
-    font-size: 14px;
-    color: black;
-    text-align: center;
- }
 
 .box-container1{
-      margin-top: 100px;
-      box-sizing:border-box ;
-      display: flex;
-      justify-content: center;
-      gap: 150px 100px;
+   margin-top:25px;
+   box-sizing:border-box ;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   gap: 150px 100px;
+}
+.box-container2{
+   margin-top:30px;
+   box-sizing:border-box ;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   gap: 150px 100px;
+}
+   .heart a:hover{
+   color:red
+    animation: animate .8s steps(28) 1;
    }
-.kids{
-      display: flex;
-      align-items:row;
-   }
+
+
 
 
 

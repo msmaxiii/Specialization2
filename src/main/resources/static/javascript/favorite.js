@@ -133,27 +133,12 @@ updateFavoriteBtn.addEventListener("click", (e)=>{
     handleFavoriteEdit(favoriteId);
 })
 
-/*
- <form id ="email">
-    <label for="emailAddress">Email</label>
-    <input type="text" id="email" name="emailAddress" placeholder="Add your email address">
-    <input type="submit" value="Send">
-  </form>
-
-
-*/
-
-/*
-function handleSend(evt) {
-	evt.preventDefault();
-
-	alert('Email sent');
-}
-form.addEventListener('submit', handleSend);
 
 
 
-*/
+
+
+
 
 
 

@@ -26,8 +26,7 @@ public class Favorite {
 
     @Column
     private String body;
-    //many to one creates association within Hibernate
-// Jsonback ref prevents infinite recursion when you deliver the resource up as Json using Restful APi endpoints
+
   @ManyToOne
    @JsonBackReference
     private User user;
@@ -39,7 +38,8 @@ public class Favorite {
     }
 
  }
-
+//many to one creates association within Hibernate
+// Jsonback ref prevents infinite recursion when you deliver the resource up as Json using Restful APi endpoints
 
 
     //1.creates the association with Hiberate
