@@ -129,10 +129,12 @@ margin-bottom:20px;
    justify-content: space-around;
    gap: 150px 100px;
 }
-   .heart a:hover{
-   color:red
-    animation: animate .8s steps(28) 1;
-   }
+
+
+ .heart a:hover{
+   color:red;
+   animation: animate .8s steps(28) 1;
+}
 
 
 

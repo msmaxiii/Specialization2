@@ -8,20 +8,24 @@
     <title>Home</title>
 </head>
 <body class="bg-image">
+<nav class="navbar fixed-top navbar-light bg-light">
+    <div class="container-fluid">
+        <a href ="#" class="logo"><i class="bi bi-book"></i> E-Book Store</a>
+        <a class="btn btn-danger float-right" href="./login.html" onclick="handleLogout()">Logout</a>
+    </div>
+    </div>
+</nav>
 
-<div class="logout">
-<a class="btn btn-danger navbar-btn" href="./login.html" onclick="handleLogout()">Logout</a>
-</div>
-
+<br><Br><Br><BR><br><br><br>
 <div class="container" id="home-container">
     <div id="favorite-form-container">
         <form id="favorite-form">
             <div class="form-group">
-                <textarea class="form-control" id="favorite-input" placeholder="Add your wishes..." rows="5"></textarea>
+                <textarea class="form-control" id="favorite-input" placeholder="Add your wishes..." rows="5"
+                          style="max-width: 600px;"></textarea>
             </div>
             <button id="submit-button" type="submit" class="btn btn-danger mt-1">Submit</button>
         </form>
-
         <div id="favorite-container" class="container-fluid"></div>
     </div>
 </div>
