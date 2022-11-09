@@ -143,3 +143,4 @@ updateFavoriteBtn.addEventListener("click", (e)=>{
 
 
 
+
