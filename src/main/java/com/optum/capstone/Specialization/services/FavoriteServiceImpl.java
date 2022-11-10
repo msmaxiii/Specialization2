@@ -24,7 +24,6 @@ public class FavoriteServiceImpl implements FavoriteService{
 
    @Override
     public void addFavorite(FavoriteDto favoriteDto, Long userId){
-
         Optional<User> userOptional = userRepository.findById(userId);
         Favorite favorite = new Favorite(favoriteDto);
         userOptional.ifPresent(favorite::setUser); // it's same as note.set user(user optional)
@@ -39,9 +38,9 @@ public class FavoriteServiceImpl implements FavoriteService{
 
    @Override
     public void updateFavoriteById(FavoriteDto favoriteDto) {
-        Optional<Favorite> favoriteOptional = favoriteRepository.findById(favoriteDto.getId() );
+        Optional<Favorite> favoriteOptional = favoriteRepository.findById(favoriteDto.getId());
         favoriteOptional.ifPresent(favorite -> {
-            favorite.setBody(favoriteDto.getBody());
+            favorite.setFavorite(favoriteDto.getBody());
             favoriteRepository.saveAndFlush(favorite);
             //use the note detail to make some other logic changes
         });
